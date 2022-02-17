@@ -10,7 +10,7 @@ DATE_COLUMN = 'date/time'
 
 @st.cache
 def load_data(nrows):
-    data = pd.read_csv("uber-raw-data-sep14.csv.gz", nrows=nrows)
+    data = pd.read_csv("https://github.com/streamlit/demo-uber-nyc-pickups/blob/main/uber-raw-data-sep14.csv.gz", nrows=nrows)
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
